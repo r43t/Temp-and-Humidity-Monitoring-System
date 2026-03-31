@@ -82,12 +82,13 @@ RTOS-Final-Project/
    ```
    python scripts/plot_bme.py
    ```
-   or
+   for fahrenheit readings or 
    ```
    python scripts/plot_bme680.py
    ```
-2. Ensure sensor data is saved in a compatible format (CSV or similar)
-3. The scripts will generate plots for temperature, humidity, and other sensor readings
+   for celsius readings.
+3. Ensure sensor data is saved in a compatible format (CSV or similar)
+4. The scripts will generate plots for temperature, humidity, and other sensor readings
 
 ## Features
 - Real-time temperature and humidity monitoring
