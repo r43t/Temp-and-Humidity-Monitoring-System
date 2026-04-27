@@ -24,8 +24,7 @@ RTOS-Final-Project/
 ├── src/
 │   └── main.cpp           # Main ESP32 firmware
 ├── scripts/
-│   ├── plot_bme.py        # Python script for plotting BME data
-│   └── plot_bme680.py     # Python script for plotting BME680 data
+│   └── plot_serial.py     # Python script for plotting BME680 data
 ├── include/               # Header files
 ├── lib/                   # Libraries
 └── test/                  # Test files
@@ -78,15 +77,11 @@ RTOS-Final-Project/
 3. Sensor data is output via serial monitor or can be configured for wireless transmission
 
 ### Data Visualization
-1. Run the Python scripts to visualize collected data:
+1. Run the Python scripts to visualize collected data: 
    ```
-   python scripts/plot_bme.py
+   python scripts/plot_serial.py
    ```
-   for fahrenheit readings or 
-   ```
-   python scripts/plot_bme680.py
-   ```
-   for celsius readings.
+   for fahrenheit readings.
 3. Ensure sensor data is saved in a compatible format (CSV or similar)
 4. The scripts will generate plots for temperature, humidity, and other sensor readings
 
