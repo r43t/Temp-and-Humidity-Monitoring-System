@@ -22,9 +22,9 @@ QueueHandle_t sampleQueue;
 
 void sensorTask(void *pvParameters) {
   TickType_t lastWakeTime = xTaskGetTickCount();
-  const TickType_t period = pdMS_TO_TICKS(2000);
+  const TickType_t period = pdMS_TO_TICKS(2000);    // 2 second period
 
-  for (;;) {
+  while (true) {
     SensorSample sample;
 
     if (bme.performReading()) {
@@ -33,16 +33,11 @@ void sensorTask(void *pvParameters) {
       sample.humidity_pct = bme.humidity;
       sample.pressure_hpa = bme.pressure / 100.0f;
       sample.gas_kohm = bme.gas_resistance / 1000.0f;
-
-      // Send sample to queue. If queue is full, this sample is dropped.
-      xQueueSend(sampleQueue, &sample, 0);
+      xQueueSend(sampleQueue, &sample, 0);  // send sample to queue. If queue is full, sample gets dropped
     }
-
-    // Keep this task on a fixed 2-second cadence
     xTaskDelayUntil(&lastWakeTime, period);
   }
 }
-
 void serialTask(void *pvParameters) {
   SensorSample sample;
 
@@ -90,9 +85,7 @@ void setup() {
       delay(1000);
     }
   }
-
-  // Pin both app tasks to Core 1 for simplicity
-  xTaskCreatePinnedToCore(
+  xTaskCreatePinnedToCore(  // Pin both tasks to Core 1 for simplicity
     sensorTask,
     "SensorTask",
     4096,
@@ -101,7 +94,6 @@ void setup() {
     NULL,
     1
   );
-
   xTaskCreatePinnedToCore(
     serialTask,
     "SerialTask",
