@@ -14,7 +14,7 @@ This project implements a real-time temperature and humidity sensing system usin
 - Python 3.x (for data visualization scripts)
 - Required Python libraries:
   - matplotlib
-  - numpy
+  - pyserial
 
 ## Project Structure
 ```
