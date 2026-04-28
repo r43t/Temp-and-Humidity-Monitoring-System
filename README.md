@@ -59,7 +59,11 @@ RTOS-Final-Project/
    - PlatformIO will handle ESP32 framework and library dependencies
    - For Python scripts, install required libraries:
      ```
-     pip install matplotlib numpy pandas
+     pip install matplotlib pyserial
+     ```
+     or just use the requirements.txt file in this repository:
+     ```
+     pip install -r requirements.txt
      ```
 
 ### 3. Build and Upload
