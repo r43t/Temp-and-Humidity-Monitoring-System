@@ -4,10 +4,10 @@
 This project implements a real-time temperature and humidity sensing system using an ESP32-WROOM-32D module and a BME680 sensor. The system collects environmental data and provides visualization through Python scripts.
 
 ## Hardware Requirements
-- ESP32-WROOM-32D microcontroller module
+- ESP32-WROOM-32D microcontroller module (or any equivalent 38-pin ESP32 module)
+- USB cable to connect ESP32 to a PC (may be USB-C or micro-USB depending on what ports your ESP32 and PC have)
 - BME680 environmental sensor (measures temperature, humidity, pressure, and air quality)
-- Appropriate power supply (3.3V for ESP32)
-- Connecting wires and breadboard (for prototyping)
+- Jumper wires
 
 ## Software Requirements
 - PlatformIO IDE or VS Code with PlatformIO extension (if you have Arduino IDE, copy paste the main.cpp file into the .ino sketch file and run the python script separately in a terminal)
