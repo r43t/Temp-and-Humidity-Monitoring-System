@@ -9,16 +9,16 @@ data = {"time": deque(maxlen=150), "temp": deque(maxlen=150), "hum": deque(maxle
 
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 7), sharex=True)
 plt.subplots_adjust(right=0.75)
-line_temp, = ax1.plot([], [], label="Temperature (°F)")
-line_hum, = ax2.plot([], [], label="Humidity (%)")
+line_temp, = ax1.plot([], [], label = "Temperature (°F)", color = "blue")
+line_hum, = ax2.plot([], [], label = "Humidity (%)", color = "red")
 
-for ax, ylabel in [(ax1, "Temp (°F)"), (ax2, "Humidity (%)")]:
+for ax, ylabel in [(ax1, "Temperature (°F)"), (ax2, "Humidity (%)")]:
     ax.set_ylabel(ylabel)
     ax.grid(True)
-    ax.legend(loc="upper right")
+    ax.legend(loc = "upper right")
 
 ax2.set_xlabel("Time (s)")
-live_box = fig.text(0.75, 0.90, "", fontsize=11, va="top", bbox=dict(boxstyle="round", facecolor="white", edgecolor="black"))
+live_box = fig.text(0.75,0.90, "",fontsize = 11,va = "top",bbox = dict(boxstyle = "round",facecolor = "white",edgecolor = "black"))
 
 def update(_):
     while ser.in_waiting:

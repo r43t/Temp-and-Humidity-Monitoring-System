@@ -10,12 +10,11 @@ This project implements a real-time temperature and humidity sensing system usin
 - Connecting wires and breadboard (for prototyping)
 
 ## Software Requirements
-- PlatformIO IDE or VS Code with PlatformIO extension
+- PlatformIO IDE or VS Code with PlatformIO extension (if you have Arduino IDE, copy paste the main.cpp file into the .ino sketch file and run the python script separately in a terminal)
 - Python 3.x (for data visualization scripts)
 - Required Python libraries:
   - matplotlib
   - numpy
-  - pandas (if needed for data processing)
 
 ## Project Structure
 ```
@@ -25,9 +24,9 @@ RTOS-Final-Project/
 │   └── main.cpp           # Main ESP32 firmware
 ├── scripts/
 │   └── plot_serial.py     # Python script for plotting BME680 data
-├── include/               # Header files
-├── lib/                   # Libraries
-└── test/                  # Test files
+├── include/               # Header files (empty)
+├── lib/                   # Libraries (empty)
+└── test/                  # Test files (empty)
 ```
 
 ## Setup Instructions
@@ -91,13 +90,6 @@ RTOS-Final-Project/
 - RTOS-based multitasking for efficient data collection
 - Python-based data visualization
 - PlatformIO for easy development and deployment
-
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
 
 ## License
 This project is licensed under the terms specified in the LICENSE file.
