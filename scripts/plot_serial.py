@@ -3,7 +3,7 @@ from collections import deque
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-# open serial connection to ESP32
+# connect to ESP32 via serial port
 ser = serial.Serial("COM7", 115200, timeout=0.2)
 # buffer to store sensor data (older data is discarded when max length is reached)
 data = {"time": deque(maxlen=150), 
@@ -42,10 +42,10 @@ def update(_):
             data["pres"].append(p)
             data["gas"].append(g)
         except:
-            continue    # ignore malformed serial lines
+            continue    # ignore incomplete serial lines
     if not data["time"]:
         return line_temp, line_hum, live_box    # if no data yet, dont update plot
-    # fix time axis to stay at 0
+    # fix time axis to start at 0 on live graph
     t0 = data["time"][0]
     x = [t - t0 for t in data["time"]]
     # update plotted data
