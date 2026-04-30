@@ -85,7 +85,7 @@ RTOS-Final-Project/
    python scripts/plot_serial.py
    ```
    for fahrenheit readings.
-3. Ensure sensor data is saved in a compatible format (CSV or similar)
+3. **NOTE: make sure the COM port of your ESP32 matches the one on the python script.** Mine was COM7 but yours may be different.
 4. The scripts will generate plots for temperature, humidity, and other sensor readings
 
 ## Features
