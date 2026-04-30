@@ -10,7 +10,7 @@ This project implements a real-time temperature and humidity sensing system usin
 - Jumper wires
 
 ## Software Requirements
-- PlatformIO IDE or VS Code with PlatformIO extension (if you have Arduino IDE, copy paste the main.cpp file into the .ino sketch file and run the python script separately in a terminal)
+- PlatformIO IDE (if you have Arduino IDE, copy paste the main.cpp file into the .ino sketch file and run the python script separately in a terminal)
 - Python 3.x (for data visualization scripts)
 - Required Python libraries:
   - matplotlib
