@@ -85,25 +85,9 @@ void setup() {
       delay(1000);
     }
   }
-  // Pin both tasks to ESP32 Core 1 for predictable timing (stability)
-  xTaskCreatePinnedToCore(   
-    sensorTask,
-    "SensorTask",
-    4096,
-    NULL,
-    1,
-    NULL,
-    1
-  );
-  xTaskCreatePinnedToCore(
-    serialTask,
-    "SerialTask",
-    4096,
-    NULL,
-    1,
-    NULL,
-    1
-  );
+  // Pin both tasks to ESP32 Core 1 for predictable timing (stability), 4 KB stack memory for each 
+  xTaskCreatePinnedToCore(sensorTask, "SensorTask", 4096, NULL, 2, NULL, 1);  // priority 2 task
+  xTaskCreatePinnedToCore(serialTask, "SerialTask", 4096, NULL, 1, NULL, 1);  // priority 1 task
 }
 
 void loop() {
