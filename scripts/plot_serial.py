@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # connect to ESP32 via serial port
-ser = serial.Serial("COM7", 115200, timeout=0.2)
+ser = serial.Serial("COM3", 115200, timeout=0.2)
 # buffer to store sensor data (older data is discarded when max length is reached)
 data = {"time": deque(maxlen=150), 
     "temp": deque(maxlen=150), 
@@ -15,7 +15,7 @@ data = {"time": deque(maxlen=150),
 # creating 2 plots vertically that share the same x-axis (time)
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 7), sharex=True)
 plt.subplots_adjust(right=0.75)
-# initialize 2 line objects that will be "live" (update dynamically)
+# initialize 2 line objects that will be "live"
 line_temp, = ax1.plot([], [], label = "Temperature (°F)", color = "blue")
 line_hum, = ax2.plot([], [], label = "Humidity (%)", color = "red")
 # configure axis labels and grids
