@@ -1,4 +1,4 @@
-# RTOS Final Project: Temperature and Humidity Sensing System
+# Temperature and Humidity Sensing System
 
 ## Overview
 This project implements a real-time temperature and humidity sensing system using an ESP32-WROOM-32D module and a BME680 sensor. The system collects environmental data and provides visualization through Python scripts.
