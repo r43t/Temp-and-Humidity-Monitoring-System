@@ -4,6 +4,7 @@
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 #include <freertos/queue.h>
+
 #define SDA_PIN 21  // GPIO 21 for I2C data pin
 #define SCL_PIN 22  // GPIO 22 for I2C clock pin
 
