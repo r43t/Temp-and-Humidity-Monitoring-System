@@ -3,8 +3,11 @@ from collections import deque
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+PORT = "/dev/ttyUSB0"   # "COM_" on Windows
+BAUD = 115200
+
 # connect to ESP32 via serial port
-ser = serial.Serial("COM3", 115200, timeout=0.2)
+ser = serial.Serial(PORT, BAUD, timeout=0.2)
 # buffer to store sensor data (older data is discarded when max length is reached)
 data = {"time": deque(maxlen=150), 
     "temp": deque(maxlen=150), 
